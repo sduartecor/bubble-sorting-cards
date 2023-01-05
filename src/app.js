@@ -71,12 +71,14 @@ window.onload = function() {
   //Llamamos a la funcion mediante el boton
   document.getElementById("draw").addEventListener("click", generarLista);
 
+  //Funcion para Ordenar las Cartas
   document.getElementById("sort").addEventListener("click", function() {
     let wall = arrayCartas.length - 1;
     while (wall > 0) {
       let index = 0;
 
       while (index < wall) {
+        //Seteamos un valor a las cartas con letras para el Sort
         if (arrayCartas[index + 1][0] == "K") {
           arrayCartas[index + 1][0] = 13;
         } else if (arrayCartas[index + 1][0] == "Q") {
@@ -97,6 +99,7 @@ window.onload = function() {
           arrayCartas[index][0] = 1;
         }
 
+        //Bubble Sort
         if (arrayCartas[index][0] > arrayCartas[index + 1][0]) {
           let aux = arrayCartas[index];
           arrayCartas[index] = arrayCartas[index + 1];
