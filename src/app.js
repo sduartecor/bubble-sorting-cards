@@ -25,7 +25,7 @@ window.onload = function() {
     ).innerHTML += `<div class="col-auto rounded">
     <!-- Card Body -->
     <div
-      class="px-3 my-3 rounded m-auto bg-white "
+      class="px-2 my-3 rounded m-auto bg-white "
       style="width: 6rem; height: 10rem"
       id="card"
     >
@@ -58,8 +58,8 @@ window.onload = function() {
   function generarLista() {
     document.getElementById("cartasAleatorias").innerHTML = "";
     arrayCartas = [];
-    let carntidadDeCartas = document.getElementById("cantidad-cartas").value;
-    for (let i = 0; i < carntidadDeCartas; i++) {
+    let cantidadCartas = document.getElementById("cantidad-cartas").value;
+    for (let i = 0; i < cantidadCartas; i++) {
       let cartaAleatoria = generateRandomCard();
       arrayCartas.push(cartaAleatoria);
       console.log(arrayCartas);
@@ -132,7 +132,7 @@ window.onload = function() {
       <div class="col-auto rounded">
       <!-- Card Body -->
       <div
-        class="px-3 my-3 rounded m-auto bg-white "
+        class="px-2 my-3 rounded m-auto bg-white "
         style="width: 6rem; height: 10rem"
         id="card"
       >
