@@ -59,7 +59,6 @@ window.onload = function() {
     document.getElementById("cartasAleatorias").innerHTML = "";
     arrayCartas = [];
     let carntidadDeCartas = document.getElementById("cantidad-cartas").value;
-    // arrCartas.length = carntidadDeCartas;
     for (let i = 0; i < carntidadDeCartas; i++) {
       let cartaAleatoria = generateRandomCard();
       arrayCartas.push(cartaAleatoria);
@@ -73,7 +72,7 @@ window.onload = function() {
 
   //Funcion para Ordenar las Cartas
   document.getElementById("sort").addEventListener("click", function() {
-    let wall = arrayCartas.length - 1;
+    let wall = arrayCartas.length - 1; //iniciamos el wall o muro al final del array
     while (wall > 0) {
       let index = 0;
 
@@ -99,7 +98,7 @@ window.onload = function() {
           arrayCartas[index][0] = 1;
         }
 
-        //Bubble Sort
+        //comparar las posiciones adyacentes, si la correcta es más grande, tenemos que intercambiar
         if (arrayCartas[index][0] > arrayCartas[index + 1][0]) {
           let aux = arrayCartas[index];
           arrayCartas[index] = arrayCartas[index + 1];
@@ -108,7 +107,7 @@ window.onload = function() {
 
         index++;
       }
-      wall--;
+      wall--; //disminuir la pared para optimizar
     }
 
     document.getElementById("cartasOrdenadas").innerHTML = "";
@@ -129,9 +128,8 @@ window.onload = function() {
         arrayCartas[i][0] = "A";
       }
 
-      document.getElementById(
-        "cartasOrdenadas"
-      ).innerHTML += `<div class="col-auto rounded">
+      document.getElementById("cartasOrdenadas").innerHTML += `
+      <div class="col-auto rounded">
       <!-- Card Body -->
       <div
         class="px-3 my-3 rounded m-auto bg-white "
